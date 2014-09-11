@@ -15,7 +15,7 @@ function hotukdeals(){
     this.items = [];
     this._html = null;
     this.$ = null;
-    this.currentPage = 1;
+    this.currentPage = null;
 };
 
 util.inherits(hotukdeals, EventEmitter);
@@ -38,7 +38,7 @@ hotukdeals.prototype.nextUrl = function() {
     var self = this;
     if(self.currentPage === null) {
         self.currentPage = 1;
-        log('info','setting currentPate to 1');
+        log.info('info','setting currentPate to 1');
         return self.baseUrl;
     } else {
 //        this.currentPage = parseInt(this.$('.redesign-pagination selected').text());
